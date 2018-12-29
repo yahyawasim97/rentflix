@@ -1,0 +1,59 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.field-validation-error,label.error {
+ 
+    color: red;
+}
+
+.i
+.input-validation-error,input.error {
+    border:2px solid red;
+}
+
+.col-md-3:hover{
+    background-color:black;
+    color:white;
+    border-radius: 20px;
+}
+
+
+
+img.card-img-top {
+    min-height: 270px;
+    max-height: 270px;
+    width: auto;
+    padding: 0px 55px;
+}
+h5.card-title {
+    text-align: center;
+    font-size: medium;
+    font-weight: 600;
+    height: 25px;
+    padding: 0px 10px;
+}
+.list-group-item {
+    border:none !important;
+    background-color:transparent;
+}

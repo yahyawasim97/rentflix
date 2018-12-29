@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie List</h2>
+
+<div class="container">
+    <div class="row"></div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="document" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="yt-player">
+
+                <iframe id="player" style="width:100%;height:500px;" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+ </div>
+</div>
+</div>
+
+
+    @section scripts
+{
+        <script>
+            console.log(123)
+            $(document).ready(function () {
+                $.ajax({
+                    url: "/api/movies",
+                    method: "GET",
+                    success: function (result) {
+                        $.each(result, function (index, value) {
+                            console.log(result)
+                            var card = '<div class="col-md-3" style="margin:15px 40px;border:2px solid;border-radius:20px;padding:15px 0px"><div class="card" style="margin:0 auto;width: 100%;"><img class="card-img-top" src="/MovieImages/' + value.movieImage + '" alt = "Movie Image" ><div class="card-body"><h5 class="card-title">' + value.name + '</h5><ul class="list-group list-group-flush"><li class="list-group-item"><b>Genre:</b> ' + value.genre.name + '</li><li class="list-group-item"><b>Number in Stock:</b> ' + value.numberAvailable + '</li></ul><div style="width:100%;"><a  class="btn btn-primary trailer" style="margin: 0px 65px;padding:10px 35px;background-color:black"  data-backdrop="static" data-keyboard="false" data-trailer-url=' + value.trailerUrl + ' >Watch Trailer</a></div></div></div></div>'
+                            $(".row").append(card)
+
+                        })
+                    }
+                })
+               
+            });
+            $(document).on('click', '.trailer', function (e) {
+                e.preventDefault();
+                
+                var trailer = $(this).attr('data-trailer-url');
+                console.log(typeof(trailer))
+                if (trailer !== "" && trailer != null) {
+                    console.log('HHello')
+                    $('#player').attr('src', trailer);
+                    $('#exampleModal').modal(['toggle', 'show']);
+                    $('#exampleModal').modal({
+                        'backdrop': 'static',
+                        'keyboard':false
+                    });
+                }
+            })
+            $('#exampleModal').on('hidden.bs.modal', function () {
+                $('#player').removeAttr('src')
+            });
+        </script>
+    }
