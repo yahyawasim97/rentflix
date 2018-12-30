@@ -349,6 +349,10 @@
     <Compile Include="Migrations\201812291830480_trailerUrl1.Designer.cs">
       <DependentUpon>201812291830480_trailerUrl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812300919537_new.cs" />
+    <Compile Include="Migrations\201812300919537_new.Designer.cs">
+      <DependentUpon>201812300919537_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -529,9 +533,12 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\typeahead.css" />
+    <Content Include="Content\util.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -548,7 +555,6 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="Content\Movie.scss" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -689,6 +695,9 @@
     <Content Include="Views\Movie\MovieForm.cshtml" />
     <Content Include="Views\Movie\ReadOnlyList.cshtml" />
     <Content Include="Views\Rental\New.cshtml" />
+    <Content Include="Views\Shared\_Customer_Layout.cshtml" />
+    <Content Include="Views\Shared\_Movie_Layout.cshtml" />
+    <Content Include="Views\Shared\_Home_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -809,6 +818,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812291830480_trailerUrl1.resx">
       <DependentUpon>201812291830480_trailerUrl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812300919537_new.resx">
+      <DependentUpon>201812300919537_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

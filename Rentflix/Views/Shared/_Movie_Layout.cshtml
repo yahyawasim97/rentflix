@@ -1,0 +1,75 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="preloader"><img style="width: 100%;height: 130vh;margin: auto;" src="~/MovieImages/loader.gif" /></div>
+
+    <div class="page-wrap" style="display:none;">
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><img src="~/MovieImages/logo.png" class="icon" style="width:60px" /></li>
+
+                <li><a href='@Url.Action("Index","Home")'><span class="icon fa-home"></span></a></li>
+                @if (this.User.IsInRole("CanManageMovie"))
+                {
+
+
+                    <li><a href='@Url.Action("Index", "Customer")'><span class="icon fa-users"></span></a></li>
+                    <li><a href='@Url.Action("New","Rental")'><span class="icon fa-camera-retro"></span></a></li>
+                }
+                <li><a href='@Url.Action("Index","Movie")' class="active"><span class="icon fa-video-camera"></span></a></li>
+
+            </ul>
+        </nav>
+
+        <section id="main">
+            <header id="header">
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 ">
+                        <img src="~/MovieImages/logo-alt.png" style="height:11vh;float:left" />
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 pull-right" style="margin-top:20px;">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </header>
+            <section>
+                <div class="inner">
+
+                    @RenderBody()
+
+                </div>
+            </section>
+            <footer id="footer">
+                <div class="copyright">
+                    &copy; 2018 <a href="https://localhost:44323/">Rentflix</a>. All Rights Reserved.
+                </div>
+            </footer>
+        </section>
+
+    </div>
+
+    @Scripts.Render("~/bundles/lib")
+    @RenderSection("scripts", required: false)
+    <script>
+        $(".page-wrap").hide();
+        $(document).ready(function () {
+            $("#preloader").delay(600).fadeOut("fast");
+            $(".page-wrap").delay(700).fadeIn("fast")
+        });
+    </script>
+</body>
+</html>

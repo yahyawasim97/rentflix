@@ -1,7 +1,4 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+﻿
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -32,9 +29,9 @@ textarea {
     border:2px solid red;
 }
 
-.col-md-3:hover{
-    background-color:black;
-    color:white;
+.col-md-3:hover {
+    background-color: #0d1217;
+    color: white;
     border-radius: 20px;
 }
 
@@ -53,7 +50,17 @@ h5.card-title {
     height: 25px;
     padding: 0px 10px;
 }
+.list-group {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
 .list-group-item {
-    border:none !important;
-    background-color:transparent;
+    border: none !important;
+    background-color: transparent;
+    
+}
+.table {
+    width:100% !important;
 }

@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Rentflix.Controllers
 {
-
+    [Authorize(Roles = "CanManageMovie")]
     public class CustomerController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

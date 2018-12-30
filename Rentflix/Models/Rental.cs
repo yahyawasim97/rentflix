@@ -9,7 +9,8 @@ namespace Rentflix.Models
     public class Rental
     {
         public int Id { get; set; }
-        
+
+        public int CustomerId { get; set; }
         [Required]
         public Customer Customer { get; set; }
 

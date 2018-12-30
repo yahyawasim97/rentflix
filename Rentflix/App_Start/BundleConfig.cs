@@ -32,7 +32,7 @@ namespace Rentflix
                       "~/Content/datatables/css/datatables.bootstrap.css",
                       "~/Content/typeahead.css",
                       "~/Content/toastr.css",
-                      "~/Content/Movie.scss",
+                      "~/Content/main.css",
                       "~/Content/font-awesome.css",
                       "~/Content/site.css"));
         }

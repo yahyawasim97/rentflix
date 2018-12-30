@@ -1,11 +1,10 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Movie_Layout.cshtml";
 }
 
-<h2>Movie List</h2>
 <div class="row">
-    @Html.ActionLink("Add Movie", "New", null, new { @class = "btn btn-primary", @style = "margin:15px;" })
+    @Html.ActionLink("Add Movie", "New", null, new { @class = "button", @style = "margin:15px;" })
 </div>
 <table id="movies" class="table">
     <thead class="thead-dark">
